@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>validationjs</title>
+    <link rel="stylesheet" href="dist/bootstrap.min.css" />
+    <script src="dist/jquery.min.js"></script>
+    <script src="validation.js"></script>
+  </head>
+  <body>
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 class="display-4">validation.js</h1>
+        <p class="lead">
+          client-side form validation.
+        </p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row mx-5">
+        <div class="col-12">
+          <h3>Basic usage</h3>
+          <p>
+            Below is an example of basic form. The form elements (eg. input,
+            select, textarea), make sure these elements has its id and name as
+            well as the form.
+          </p>
+        </div>
+        <div class="col-12 col-md-6">
+          <form id="form" name="form">
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email</label><br />
+              <small class="text-muted">valid email: <i>gmail.com</i></small>
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                name="email"
+                onkeyup="validate({elem:this, valid_email:'gmail.com'})"
+              />
+              <small id="email_msg"></small>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Body</label>
+              <textarea
+                class="form-control"
+                id="body"
+                name="body"
+                onkeyup="validate({elem:this})"
+              ></textarea>
+              <small id="body_msg"></small>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script>
+      $(function () {
+        Watch(form);
+      });
+    </script>
+  </body>
+</html>
